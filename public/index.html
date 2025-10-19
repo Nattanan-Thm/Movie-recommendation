@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation App (Dark)</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Movie Recommendation</h1>
+            
+            <div class="search-bar">
+                <input type="text" id="keywordInput" placeholder="Title, Genre (e.g., Action, Comedy) or rating > 4">
+                <button id="recommendButton" type="button">Search</button>
+            </div>
+            
+            <p class="search-hint">
+                Tip: Use a comma for multiple genres (e.g., **Drama, Romance**) or use **'rating > X'** for scores.
+            </p>
+            
+            <div class="genre-labels">
+                <span class="genre-pill genre-pill-button" onclick="setGenre('Action')">Action</span>
+                <span class="genre-pill genre-pill-button" onclick="setGenre('Comedy')">Comedy</span>
+                <span class="genre-pill genre-pill-button" onclick="setGenre('Romance')">Romance</span>
+                <span class="genre-pill genre-pill-button" onclick="setGenre('Drama')">Drama</span>
+                <span class="genre-pill genre-pill-button" onclick="setGenre('Animation')">Animation</span>
+                <span class="genre-pill genre-pill-button" onclick="setGenre('Crime')">Crime</span>
+                <span class="genre-pill genre-pill-button" onclick="setGenre('War')">War</span>
+            </div>
+        </header>
+
+        <main>
+            <section id="featured-movie">
+                <div class="featured-movie-card initial-message">
+                    <div class="featured-details" style="text-align: center; width: 100%; padding: 30px 0;">
+                        <div class="featured-title">Welcome to the Recommender!</div>
+                        <div class="featured-description">Use the search box or click a genre button to get started.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="suggested-section" style="display:none;">
+                <h2 class="suggested-heading">You may like</h2>
+                <div id="suggested-movies" class="suggested-movies"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* --- DARK THEME BASE --- */
+body {
+    /* 1. พื้นหลังหลักเป็นสีดำเข้มเต็มจอ */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #121212; 
+    margin: 0;
+    padding: 0;
+    color: #f5f5f5; /* ข้อความหลักเป็นสีขาว/เทาอ่อน */
+    min-height: 100vh;
+}
+.container {
+    /* 2. รักษากรอบขนาดเดิม (อ่านง่าย) แต่ปรับให้เป็นสีเข้ม */
+    max-width: 700px;
+    margin: 40px auto;
+    /* พื้นหลัง Container เป็นสีเข้มโปร่งแสงเล็กน้อย */
+    background: rgba(30, 30, 30, 0.9); 
+    border-radius: 20px; 
+    /* เงาที่เข้ากับ Dark Mode */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 32px 24px;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+h1 {
+    color: #f5f5f5;
+    font-size: 2rem;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+/* --- Search Bar & Buttons --- */
+.search-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 5px; 
+}
+/* เพิ่มสไตล์สำหรับ Hint Text */
+.search-hint {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.4;
+}
+
+input[type="text"] {
+    width: 320px;
+    padding: 12px;
+    font-size: 1rem;
+    /* Input พื้นหลังเข้ม ขอบเข้ม */
+    border: 1px solid #3a3a3a;
+    border-radius: 24px;
+    background: #282828; 
+    color: #f5f5f5; 
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="text"]:focus {
+    border-color: #ff2d2d;
+    box-shadow: 0 0 0 3px rgba(255, 45, 45, 0.2);
+}
+button { 
+    padding: 12px 22px;
+    font-size: 1rem;
+    background: #ff2d2d;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.1s;
+}
+button:hover {
+    background: #c70000;
+    transform: translateY(-1px);
+}
+
+/* --- Genre Labels (Pills) --- */
+.genre-labels {
+    display: flex;
+    gap: 8px; 
+    flex-wrap: wrap;
+    justify-content: center; 
+    margin: 5px 0 20px 0; 
+    max-width: 100%; 
+}
+
+.genre-pill-button { 
+    display: inline-block; 
+    /* Pill พื้นหลังเข้ม */
+    background: #282828; 
+    color: #f5f5f5; 
+    border-radius: 16px;
+    padding: 6px 18px; 
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #3a3a3a; 
+    border-width: 1px;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    white-space: nowrap; 
+    margin-bottom: 8px;
+}
+
+.genre-pill-button:hover {
+    background: #ff2d2d; 
+    color: #fff;
+    border-color: #ff2d2d;
+    box-shadow: 0 2px 5px rgba(255, 45, 45, 0.4);
+}
+
+/* --- Featured Movie Section --- */
+#featured-movie { margin: 32px 0 24px 0; }
+.featured-movie-card {
+    display: flex; gap: 28px; align-items: flex-start;
+    /* Featured Card พื้นหลังเข้ม */
+    background: #1e1e1e; 
+    border-radius: 14px;
+    padding: 28px; 
+    box-shadow: 0 1px 8px rgba(0,0,0,0.2); 
+    min-height: 250px; 
+}
+.featured-poster {
+    width: 170px; height: 250px; object-fit: cover; 
+    border-radius: 12px; 
+    background: #282828; 
+}
+.featured-details { flex: 1; }
+.featured-title { 
+    font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; 
+    color: #f5f5f5; 
+}
+.featured-genre { font-size: 1rem; color: #ff2d2d; margin-bottom: 10px; font-weight: bold; }
+.featured-rating { font-size: 1.05rem; color: #ffd600; font-weight: bold; margin-bottom: 10px; }
+.featured-description { 
+    font-size: 1.05rem; margin-bottom: 14px; 
+    color: #aaaaaa; 
+}
+.more-info-btn { 
+    padding: 9px 18px; font-size: 1rem; 
+    background: #1e1e1e; 
+    color: #ff2d2d; 
+    border: 1px solid #ff2d2d; 
+    border-radius: 12px; cursor: pointer; font-weight: bold; 
+    transition: background 0.2s, color 0.2s;
+}
+.more-info-btn:hover { background: #ff2d2d; color: #fff; }
+
+
+/* --- Suggested Movies Section (You May Like) --- */
+.suggested-heading {
+    color: #f5f5f5; 
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left; /* ทำให้ชิดซ้าย */
+    margin-left: 28px; 
+    padding-left: 0;
+}
+.suggested-movies {
+    /* ใช้ Grid เพื่อการจัดเรียงที่สม่ำเสมอในแนวนอน */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
+    gap: 18px;
+    justify-content: center;
+}
+.suggested-item {
+    /* Suggested Card พื้นหลังเข้ม */
+    background: #282828; 
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.3); 
+    border: 1px solid #3a3a3a; 
+    transition: transform 0.2s;
+}
+.suggested-item:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.suggested-poster {
+    width: 110px; height: 160px; object-fit: cover;
+    border-radius: 8px; background: #282828; margin-bottom: 8px;
+}
+
+/* Wrapper สำหรับกำหนดความสูงคงที่ของส่วนรายละเอียด */
+.suggested-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 115px; 
+    width: 100%;
+    margin-bottom: 8px; 
+}
+
+.suggested-item .suggested-title { 
+    font-size: 0.95rem; font-weight: bold; margin-bottom: 6px; text-align: center; 
+    color: #f5f5f5; 
+    overflow: hidden; text-overflow: ellipsis; display: -webkit-box;
+    -webkit-line-clamp: 2; -webkit-box-orient: vertical; width: 100%;
+}
+
+.suggested-genre {
+    font-size: 0.8rem; color: #ff2d2d; margin-bottom: 4px; font-weight: bold; width: 100%;
+    text-align: center; white-space: normal; 
+    overflow: hidden; text-overflow: ellipsis; display: -webkit-box;
+    -webkit-line-clamp: 3; -webkit-box-orient: vertical; word-wrap: break-word;
+}
+.suggested-rating {
+    font-size: 0.85rem; color: #ffd600; font-weight: bold;
+    margin-top: auto; 
+    margin-bottom: 4px; 
+}
+.suggested-more-btn {
+    padding: 6px 10px; font-size: 0.85rem; 
+    background: #282828; 
+    color: #ff2d2d;
+    border: 1px solid #ff2d2d; 
+    border-radius: 8px; cursor: pointer; font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+.suggested-more-btn:hover { background: #ff2d2d; color: #fff; }
+
+/* --- Media Query for Mobile --- */
+@media (max-width: 900px) {
+    .container { padding: 16px 6px; }
+    .featured-movie-card { flex-direction: column; align-items: center; padding: 16px; gap: 16px; }
+    .featured-poster { margin-bottom: 0; }
+    .suggested-heading { margin-left: 16px; }
+}
